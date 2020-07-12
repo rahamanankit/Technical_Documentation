@@ -1,0 +1,69 @@
+header{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+ul li{
+    line-height: 1.5em;
+}
+
+#navbar{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+}
+
+#navbar ul{
+    list-style-type: none;
+    position: relative;
+    right: 30px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.1em;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 50px;
+    grid-template-areas:
+        'menu content content content content'
+        'menu content content content content'
+        'menu content content content content';
+}
+
+#navbar{
+    grid-area: menu;
+}
+
+
+#main-doc{
+    grid-area: content;
+}
+
+#navbar header{
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 30px;
+        grid-template-areas: 
+            'menu menu menu'
+            'content content content'
+            'content content content';
+    }
+    #navbar{
+        position: static;
+        height: 250px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+}
